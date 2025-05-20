@@ -8,7 +8,7 @@ Welcome to my DevOps portfolio! I'm a **Linux Engineer** exploring and mastering
 ## 📁 Repository Structure
 ```
 DevOps-Portfolio/
-├── jenkins           # Jenkins pipeline configuration  
+├── Jenkins_CI_CD     # Jenkins pipeline configuration  
 └── README.md         # You're here :)
 ```
 
