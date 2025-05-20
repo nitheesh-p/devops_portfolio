@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    
+    stages{
+        stage("Code"){
+            steps{
+                git url: "https://github.com/nitheesh-p/Check_In_App", branch: "jenkins"
+            }
+        }
+        stage("Build"){
+            steps{
+                echo "Docker Build"
+                sh "docker build -t check-in-app ."
+            }
+        }
+        stage("Test"){
+            steps{
+                echo "Test stage"
+            }
+        }
+        stage("Push to Docker Hub"){
+            steps{
+               withCredentials([usernamePassword(
+                   credentialsId:"dockerhubid",
+                   usernameVariable:"duser",
+                   passwordVariable:"dpass",
+               )]){
+               sh "docker login -u ${env.duser} -p ${env.dpass}"
+               sh "docker image tag check-in-app ${env.duser}/check-in-app:latest"
+               sh "docker push ${env.duser}/check-in-app:latest"
+            
+               }   
+            }
+        }
+        stage("Deploy"){
+            steps{
+                echo "Deploy stage"
+                sh "docker compose up -d --build"
+            }
+        }
+    }
+}
