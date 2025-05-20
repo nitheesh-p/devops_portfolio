@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules         # prevents host from overwriting container’s node_modules
+      - sqlite_data:/app/database_storage
+    environment:
+      - NODE_ENV=development
+
+volumes:
+  sqlite_data:
