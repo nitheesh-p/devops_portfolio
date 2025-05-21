@@ -1,0 +1,26 @@
+# === Terraform State Files ===
+*.tfstate
+*.tfstate.backup
+
+# === Terraform Crash Logs ===
+crash.log
+
+# === Sensitive Key Files ===
+*.pem
+*.key
+*.pub
+terra-key-ec2
+
+# === Terraform Plan Files ===
+*.tfplan
+
+# === Local .terraform Directory ===
+.terraform/
+
+# === IDE/Editor Folders ===
+.vscode/
+.idea/
+
+# === OS-specific files ===
+.DS_Store
+*.swp
