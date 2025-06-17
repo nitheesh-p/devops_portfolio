@@ -24,3 +24,4 @@ terra-key-ec2
 # === OS-specific files ===
 .DS_Store
 *.swp
+Ansible/Terraform for Ansible/terraform.tf

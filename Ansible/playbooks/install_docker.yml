@@ -1,0 +1,27 @@
+-
+  name: Install Docker
+  hosts: my_servers
+  become: yes
+
+  tasks:
+    - name: Install Docker When OS is Ubuntu
+      package:
+        name: docker
+        state: latest
+
+      when: ansible_distribution == 'Amazon'
+
+    - name: Install Docker When OS is Ubuntu
+      package:
+        name: docker.io
+        state: latest
+
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: Start Docker
+      systemd_service:
+        name: docker
+        state: started
+
+    - name: verify docker installation
+      command: docker ps
