@@ -10,7 +10,7 @@ Welcome to my DevOps portfolio! I'm a **Linux Engineer** exploring and mastering
 DevOps-Portfolio/
 ├── Jenkins_CI_CD     # Jenkins pipeline configuration  
 ├── Terraform         # Terraform IaC
-└── README.md         # You're here :)
+└── README.md         # You're here 
 ```
 
 ## 📌 How to Use This Repo
